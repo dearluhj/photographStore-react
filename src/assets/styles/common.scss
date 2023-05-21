@@ -1,0 +1,32 @@
+$skyblue: #61dafb;
+$myfont:"mycustomfont";
+$no0: 12px;
+$no1: 14px;
+$no2: 16px;
+$no3: 18px;
+$no4: 20px;
+$no5: 22px;
+$no6: 24px;
+$no7: 26px;
+$no8: 28px;
+$no9: 30px;
+$no10: 32px;
+
+@mixin flex-c-c {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-custom($jus, $ali) {
+  display: flex;
+  justify-content: $jus;
+  align-items: $ali;
+}
+
+@mixin pos-absl-center{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}

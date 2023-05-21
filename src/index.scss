@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "mycustomfont";
+  src: url("./assets/font/zcool-gdh_Regular.ttf");
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -11,3 +16,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+#root {
+  div,p {
+    box-sizing: border-box;
+  }
+  p{
+    margin: 0;
+  }
+}
+
