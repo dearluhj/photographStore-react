@@ -1,7 +1,7 @@
 .logincontainer {
   width: 90%;
   max-width: 500px;
-  height: 40vh;
+  min-height: 40vh;
   padding: 10px;
   background: url("../../assets/images/login_border.png") no-repeat;
   background-size: 100% 100%;
@@ -19,26 +19,46 @@
   color: transparent;
   letter-spacing: 2px;
   padding: 10px 0;
+  margin-bottom: 1.5vh;
+
   &::before {
     content: "";
     display: block;
     width: 80%;
     position: absolute;
     left: 50%;
-    top: 120%;
+    bottom: 0;
     transform: translateX(-50%);
     height: 2px;
     background: linear-gradient(90deg, rgba(0, 195, 255, 0.5) 0%, rgba(0, 195, 255, 0.5) 30%, rgba(0, 140, 255, 0.7) 30%, rgba(0, 140, 255, 0.7) 70%, rgba(0, 195, 255, 0.5) 70%, rgba(0, 195, 255, 0.5) 100%);
   }
 }
 
-.username{
-}
-.signinput{
 
+
+.signinput {
+  padding: 20px;
+  text-align: center;
+
+  .username,
+  .password {
+    font-size: 16px;
+  }
+
+  p {
+    text-align: left;
+    font-family: $myfont;
+    font-size: $no2;
+    color: #fff;
+    margin-bottom: 1.5vh;
+  }
 }
-.enterbtn{
+
+.enterbtn {
   font-family: $myfont;
   font-size: $no4;
   height: auto;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-top: 2vh;
 }

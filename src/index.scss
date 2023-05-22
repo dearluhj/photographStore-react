@@ -17,12 +17,12 @@ code {
     monospace;
 }
 
-#root {
-  div,p {
-    box-sizing: border-box;
-  }
-  p{
-    margin: 0;
-  }
+
+div,
+p {
+  box-sizing: border-box;
 }
 
+p {
+  margin: 0;
+}

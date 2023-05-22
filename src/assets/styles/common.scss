@@ -11,7 +11,12 @@ $no7: 26px;
 $no8: 28px;
 $no9: 30px;
 $no10: 32px;
-
+$padd:10px;
+$padd-t-b:10px 0;
+$padd-l-r:0 10px;
+$marg:10px;
+$marg-t-b:10px 0;
+$marg-l-r:0 10px;
 @mixin flex-c-c {
   display: flex;
   justify-content: center;
