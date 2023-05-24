@@ -1,12 +1,21 @@
-import React, { Fragment } from "react";
+import React from "react";
 import logo from "./logo.svg";
 import "./App.scss";
 import { useRoutes } from "react-router-dom";
 import elements from "./router/router";
+import { App } from "antd";
+import AntdMessage from "./store/antdMessage";
 
-function App() {
+function ApptoReact() {
   const element = useRoutes(elements);
-  return <Fragment>{element}</Fragment>;
+
+  return (
+    <App message={{ maxCount: 3 }}>
+      {/* {全局注册antd消息提醒组件} */}
+      <AntdMessage />
+      <div className="is-light">{element}</div>
+    </App>
+  );
 }
 
-export default App;
+export default ApptoReact;

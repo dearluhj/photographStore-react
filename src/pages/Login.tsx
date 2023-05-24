@@ -3,6 +3,7 @@ import loginPagecss from "../assets/styles/login/login.module.scss";
 import Loginbox from "../components/loginbox/index";
 import { useNavigate, Navigate } from "react-router-dom";
 import { Alert } from "antd";
+import { message } from "../store/antdMessage";
 
 export default function Login() {
   const navigateTo = useNavigate();
@@ -21,6 +22,7 @@ export default function Login() {
   ) => {
     if (password === "123456") {
       sessionStorage.setItem("userName", username);
+      message.success("Login Successfully")
       navigateTo("/home");
     } else {
       setIncorrect(true);

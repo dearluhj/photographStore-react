@@ -1,3 +1,5 @@
+$tran05s:0.5s;
+
 .sidebarContainer {
   position: fixed;
   left: 0;
@@ -5,9 +7,9 @@
   bottom: 0;
   width: 60%;
   max-width: 300px;
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: var(--sidebarbackground);
   box-shadow: 5px 0 10px rgba(0, 0, 0, 0.2);
-  transition: .5s;
+  transition: $tran05s;
 
   &.hide {
     width: 60px;
@@ -17,25 +19,37 @@
       transform: scaleX(0);
     }
 
+    .profiles {
+      .username {
+        display: none;
+      }
+
+      .avatar {
+        img {
+          width: 50px;
+          height: 50px;
+        }
+      }
+    }
   }
 }
 
 .topnav {
   padding: 5px 10px;
   @include flex-custom(flex-end, center);
-  border-bottom: 2px solid $skyblue;
+  border-bottom: 2px solid var(--bordercolor);
 
   .title {
     font-family: $myfont;
     font-size: $no3;
-    color: #fff;
+    color: var(--sidebarcolor);
     letter-spacing: 2px;
     margin-right: auto;
-    transition: .3s;
+    transition: $tran05s;
   }
 
   .menubtn {
-    color: #fff;
+    color: var(--sidebarcolor);
     font-size: $no6;
     cursor: pointer;
   }
@@ -45,7 +59,7 @@
   padding: $padd;
   @include flex-c-c;
   flex-direction: column;
-  border-bottom: 2px solid $skyblue;
+  border-bottom: 2px solid var(--bordercolor);
 
   .avatar {
     padding: 20% 0 10%;
@@ -55,15 +69,17 @@
       height: 150px;
       border-radius: 50%;
       box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+      transition: $tran05s;
     }
   }
 
   .username {
     font-family: $myfont;
     font-size: $no6;
-    color: #fff;
+    color: var(--sidebarcolor);
     letter-spacing: 2px;
     padding-bottom: 10%;
+    transition: $tran05s;
   }
 }
 

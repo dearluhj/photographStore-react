@@ -1,0 +1,43 @@
+$tran05s:0.5s;
+.nav{
+  @include flex-c-c;
+  padding: $padd;
+  transition: $tran05s;
+  border-bottom: 2px solid var(--bordercolor);
+  .shadow{
+    margin-right: auto;
+    transition: $tran05s;
+    @include flex-c-c;
+    .switch{
+      background-color: rgb(255, 217, 0);
+      &.dark:hover{
+        background-color: rgb(255, 217, 0);
+      }
+      &:hover,&.dark{
+        background-color: rgba(66, 66, 66, 0.7);
+      }
+    }
+    .mode{
+      font-family: $myfont;
+      font-size: $no1;
+      color: var(--sidebarcolor);
+      margin-left: 10px;
+    }
+  }
+  .logout{
+    font-size: $no1;
+    cursor: pointer;
+    @include flex-c-c;
+    font-family: $myfont;
+    color: var(--sidebarcolor);
+    .logouticon{
+      font-size: $no4;
+      margin-left: 10px;
+    }
+  }
+}
+.hide{
+  &.nav{
+    transform: scale(0);
+  }
+}

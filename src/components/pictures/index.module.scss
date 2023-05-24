@@ -1,0 +1,16 @@
+$tran05s:0.5s;
+.maincontainer{
+  .title{
+    font-family: $myfont;
+    font-size: $no8;
+    text-align: center;
+    color: transparent;
+    background: linear-gradient(139.03deg, #00e2ff 0%, #ffffff 49.1%, #00ffc0 100%);
+    background-clip: text;
+    cursor: pointer;
+    transition: $tran05s;
+    &:hover{
+      transform: scale(1.1);
+    }
+  }
+}
