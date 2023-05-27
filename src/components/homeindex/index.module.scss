@@ -1,0 +1,12 @@
+.maincontainer{
+  width: 100%;
+  border-radius: 50px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 15px var(--imgshadow);
+  overflow: hidden;
+  img{
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}

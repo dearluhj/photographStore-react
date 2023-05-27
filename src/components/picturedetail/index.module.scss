@@ -1,0 +1,10 @@
+.picturecontainer{
+  border-radius: 3vmax;
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 15px var(--imgshadow);
+  overflow: hidden;
+  transition: 0.5s;
+  &:hover{
+    transform: scale(1.05);
+  }
+}

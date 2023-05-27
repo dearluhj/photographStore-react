@@ -1,0 +1,35 @@
+.maincontainer{
+  position: fixed;
+  inset: 0;
+  @include flex-c-c;
+  .loadcomponent{
+    width: 200px;
+    height: 200px;
+    border-radius: 200px;
+    border-top: 8px solid rgb(107, 107, 107);
+    border-right: 8px solid rgb(107, 107, 107);
+    border-bottom: 8px solid rgb(107, 107, 107);
+    border-left: 8px solid transparent;
+    animation: load 1s linear infinite;
+    position: relative;
+    &::after{
+      content: "";
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      border-top: 8px solid rgb(107, 107, 107);
+      border-left: 8px solid rgb(107, 107, 107);
+      left: 18px;
+      bottom: -4px;
+      transform: rotate(-10deg);
+    }
+  }
+}
+@keyframes load {
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}

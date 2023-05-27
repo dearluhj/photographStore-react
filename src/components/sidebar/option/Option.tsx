@@ -1,29 +1,40 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import optioncss from "./option.module.scss";
-import { ExportOutlined, BulbOutlined,ExclamationCircleOutlined } from "@ant-design/icons";
+import {
+  ExportOutlined,
+  BulbOutlined,
+  ExclamationCircleOutlined
+} from "@ant-design/icons";
 import { Switch } from "antd";
 import { modal } from "../../../store/antdMessage";
 import { useNavigate } from "react-router-dom";
+import { useAppDispatch } from "../../../store/redux/hooks";
+import { setMode } from "../../../store/redux/appstore";
 
 type Props = {
   className?: string;
 };
 export default function Option({ className }: Props) {
   const [darkSwitch, setDarkSwitch] = useState(false);
-  const navigateTo=useNavigate();
+  const dispatch = useAppDispatch();
+  const navigateTo = useNavigate();
   const handleLogout = () => {
     modal.confirm({
-      title:"You will about to LogOut",
-      content:"退出登录后将跳转到登录页面",
-      okText:"Yes",
-      cancelText:"cancel",
+      title: "You will about to LogOut",
+      content: "退出登录后将跳转到登录页面",
+      okText: "Yes",
+      cancelText: "cancel",
       icon: <ExclamationCircleOutlined />,
       onOk() {
         sessionStorage.clear();
-        navigateTo("/")
+        navigateTo("/");
       }
-    })
+    });
   };
+
+  useEffect(() => {
+    dispatch(setMode(!darkSwitch));
+  }, [darkSwitch]);
 
   return (
     <div className={`${optioncss.nav} ${className && optioncss[className]}`}>

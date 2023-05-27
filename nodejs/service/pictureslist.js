@@ -404,3 +404,5 @@ let picturesList = [{
     ]
   },
 ]
+
+module.exports = picturesList

@@ -1,0 +1,130 @@
+$tran05s:0.5s;
+
+.maincontainer {
+  .picturecontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+
+    &::after {
+      content: "";
+      width: 4px;
+      height: 100%;
+      position: absolute;
+      left: 50%;
+      top: 0;
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .pictureItem {
+      border-radius: 3vmax;
+      box-shadow: 0 0 15px var(--imgshadow);
+      overflow: hidden;
+      margin-bottom: 5%;
+      border: 4px solid var(--imgbordercolor);
+      width: 70%;
+      position: relative;
+      transition: $tran05s;
+      cursor: pointer;
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        background-color: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(5px);
+        transition: $tran05s;
+      }
+
+      img {
+        width: 100%;
+        display: block;
+      }
+
+      &:nth-of-type(2n) {
+        margin-left: auto;
+      }
+
+      &:hover {
+        transform: scale(1.05);
+        z-index: 2;
+        &::after {
+          opacity: 0;
+          pointer-events: none;
+        }
+      }
+
+      &.active {
+        animation: itemactive 0.5s ease-in-out 1;
+      }
+    }
+
+    
+  }
+
+  .getMore {
+    @include flex-c-c;
+
+    &>.text {
+      font-size: $no5;
+      color: transparent;
+      background: linear-gradient(139.03deg, #00e2ff 0%, #ffffff 49.1%, #00ffc0 100%);
+      background-clip: text;
+      font-family: $myfont;
+    }
+
+    .hasmore {
+      cursor: pointer;
+      transition: $tran05s;
+
+      &:hover {
+        transform: scale(1.1);
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.loadding {
+  width: 100%;
+
+  .loaddingicon {
+    color: #fff;
+    font-size: 100px;
+  }
+  .nextpageloaddingicon{
+    color: #fff;
+    font-size: 60px;
+  }
+}
+
+@keyframes itemactive {
+  0% {
+    transform: translateY(0px);
+  }
+
+  25% {
+    transform: translateY(20px);
+  }
+
+  75% {
+    transform: translateY(-60px);
+  }
+
+  100% {
+    transform: translateY(0px) scale(1.05);
+  }
+}
+
+@media (max-width:768px) {
+  .maincontainer {
+    .picturecontainer {
+      .pictureItem {
+        width: 100%;
+      }
+    }
+  }
+}

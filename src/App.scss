@@ -3,6 +3,9 @@
   --textcolor: #fff;
   --sidebarbackground:rgba(0, 0, 0, 0.2);
   --bordercolor: #fff;
+  --mainbackground:rgba(0, 0, 0, 0.3);
+  --imgshadow:rgba(255, 255, 255, 0.5);
+  --imgbordercolor:rgba(255, 255, 255, 0.6);
 }
 
 .is-light {
@@ -10,4 +13,7 @@
   --textcolor: rgba(0, 0, 0, 0.8);
   --sidebarbackground:rgba(255, 255, 255, 0.6);
   --bordercolor: #61dafb;
+  --mainbackground:rgba(255, 255, 255, 0.2);
+  --imgshadow:rgba(0, 0, 0, 0.3);
+  --imgbordercolor:rgba(255, 255, 255, 0.2)
 }
