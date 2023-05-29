@@ -2,13 +2,13 @@ import { useState, useCallback } from "react";
 import { Outlet, Link } from "react-router-dom";
 import Sidebar from "../components/sidebar";
 import homecss from "../assets/styles/home/home.module.scss";
-import {useAppSelector} from "../store/redux/hooks";
+import { useAppSelector } from "../store/redux/hooks";
 import { storeBackPicture } from "../store/redux/appstore";
 
 export default function Home() {
   const [homePaddingleft, setHomePaddingleft] = useState(0);
-  
-  const backgroundUrl=useAppSelector(storeBackPicture)
+
+  const backgroundUrl = useAppSelector(storeBackPicture);
 
   const getWidth = useCallback((width: number) => {
     setHomePaddingleft(width);
@@ -17,7 +17,10 @@ export default function Home() {
   return (
     <div
       className={homecss.maincontainer}
-      style={{ paddingLeft: homePaddingleft}}
+      style={{
+        paddingLeft: homePaddingleft,
+        backgroundImage: `url(${backgroundUrl})`
+      }}
     >
       <Sidebar getWidth={getWidth} />
       <div className={homecss.picturecontainer}>

@@ -4,14 +4,18 @@ import Loginbox from "../components/loginbox/index";
 import { useNavigate, Navigate } from "react-router-dom";
 import { Alert } from "antd";
 import { message } from "../store/antdMessage";
+import { setUsername } from "../store/redux/appstore";
+import { useAppDispatch } from "../store/redux/hooks";
 
 export default function Login() {
   const navigateTo = useNavigate();
   const [incorrect, setIncorrect] = useState(false);
+  const dispatch = useAppDispatch();
 
   const token = sessionStorage.getItem("userName");
   if (token) {
     //如果已经登录了则跳转到首页
+    dispatch(setUsername(token));
     return <Navigate to={"/home"} />;
   }
 
@@ -22,7 +26,8 @@ export default function Login() {
   ) => {
     if (password === "123456") {
       sessionStorage.setItem("userName", username);
-      message.success("Login Successfully")
+      dispatch(setUsername(username));
+      message.success("Login Successfully");
       navigateTo("/home");
     } else {
       setIncorrect(true);
@@ -45,9 +50,7 @@ export default function Login() {
               setIncorrect(false);
             }}
           />
-          
         </div>
-        
       )}
       <Loginbox handelLogin={handleLogin} />
     </div>

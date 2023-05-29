@@ -4,7 +4,7 @@ import type { RootState } from './store';
 
 // 定义 slice state 的类型
 interface appstoreState {
-  userName: string;
+  userName: string | null | undefined;
   //true为白天，false为黑夜
   currentMode: boolean;
   backPicture: string;
@@ -25,7 +25,7 @@ export const appstoreStateSlice = createSlice({
     setMode: (state, action: PayloadAction<boolean>) => {
       state.currentMode = action.payload;
     },
-    setUsername: (state, action: PayloadAction<string>) => {
+    setUsername: (state, action: PayloadAction<string | null | undefined>) => {
       state.userName = action.payload;
     },
     setBackPictureurl: (state, action: PayloadAction<string>) => {

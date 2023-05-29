@@ -42,6 +42,7 @@ $tran05s:0.5s;
       img {
         width: 100%;
         display: block;
+        transition: $tran05s;
       }
 
       &:nth-of-type(2n) {
@@ -59,6 +60,9 @@ $tran05s:0.5s;
 
       &.active {
         animation: itemactive 0.5s ease-in-out 1;
+        &::after{
+          backdrop-filter: blur(0px);
+        }
       }
     }
 

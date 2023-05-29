@@ -9,7 +9,7 @@ import { Switch } from "antd";
 import { modal } from "../../../store/antdMessage";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../../store/redux/hooks";
-import { setMode } from "../../../store/redux/appstore";
+import { setMode, setUsername } from "../../../store/redux/appstore";
 
 type Props = {
   className?: string;
@@ -27,6 +27,7 @@ export default function Option({ className }: Props) {
       icon: <ExclamationCircleOutlined />,
       onOk() {
         sessionStorage.clear();
+        dispatch(setUsername(null));
         navigateTo("/");
       }
     });
